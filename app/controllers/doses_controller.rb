@@ -17,11 +17,13 @@ class DosesController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @dose = Dose.find(params[:id])
+    @dose.destroy
   end
 
   private
   def dose_params
-    params.require(:dose).permit(:description)
+    params.require(:dose).permit(:description, :ingredient_id)
   end
 end
