@@ -3,10 +3,9 @@
 <div class="container">
 
 <% @cocktails.each do |cocktail|%>
-  <div class="card">
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @article.photo.key, height: 300, width: 400, crop: :fill %>')">
     <h2><%=cocktail.name %></h2>
-<img src="" alt="">
-<button><%=link_to "See recipe", cocktail_path(cocktail)%></button>
+    <button><%=link_to "See recipe", cocktail_path(cocktail)%></button>
   </div>
 <% end %>
 
