@@ -1,13 +1,16 @@
-<h1>MONSIEUR COCKTAIL</h1>
-
 <div class="container">
 
+<h1>MONSIEUR COCKTAIL</h1>
+
 <% @cocktails.each do |cocktail|%>
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @article.photo.key, height: 300, width: 400, crop: :fill %>')">
+<div class="card-product">
+  <%= cl_image_tag cocktail.photo.key, crop: :fill %>
+  <div class="card-product-infos">
     <h2><%=cocktail.name %></h2>
     <button><%=link_to "See recipe", cocktail_path(cocktail)%></button>
   </div>
+</div>
 <% end %>
 
-</div>
 <%= link_to 'Add a new cocktail', new_cocktail_path %>
+</div>
